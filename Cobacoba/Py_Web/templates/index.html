@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kalkulator Flask</title>
+    </head>
+    <body>
+        <h2>Kalkulator Penjumlahan</h2>
+        <form action="/" method="POST">
+            <input
+                type="number"
+                name="angka1"
+                placeholder="Masukkan angka pertama"
+                required
+            />
+            <input
+                type="number"
+                name="angka2"
+                placeholder="Masukkan angka kedua"
+                required
+            />
+            <button type="submit">Hitung</button>
+        </form>
+        {% if hasil is not none %}
+        <h3>Hasil: {{ hasil }}</h3>
+        {% endif %}
+    </body>
+</html>

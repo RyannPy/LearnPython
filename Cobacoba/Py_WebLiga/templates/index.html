@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nao League</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='styles.css') }}"
+        />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- BAGIAN INPUT SKOR -->
+            <div class="Liga">
+                <h1>LIGA 1</h1>
+                <div class="isiLiga">
+                    <form action="/tambah" method="post">
+                        <div class="timPertama">
+                            <select name="tim1" id="tim1">
+                                <option value="None">Pilih Tim 1</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="China">China</option>
+                                <option value="Saudi Arabia">
+                                    Saudi Arabia
+                                </option>
+                            </select>
+                            <input
+                                type="number"
+                                id="skor1"
+                                name="skor1"
+                                placeholder="Skor Tim 1"
+                                required
+                            />
+                        </div>
+                        <div class="timKedua">
+                            <select name="tim2" id="tim2">
+                                <option value="None">Pilih Tim 2</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="China">China</option>
+                                <option value="Saudi Arabia">
+                                    Saudi Arabia
+                                </option>
+                            </select>
+                            <input
+                                type="number"
+                                id="skor2"
+                                name="skor2"
+                                placeholder="Skor Tim 2"
+                                required
+                            />
+                        </div>
+                        <button type="submit">Selesai</button>
+                    </form>
+                    <p class="deskripsi">
+                        Semua hasil akan diakumulasikan dan disimpan.
+                    </p>
+                </div>
+            </div>
+            <!-- TAMPILKAN KLASEMEN -->
+            <div class="klasemen">
+                <h2>Klasemen</h2>
+                <table border="1">
+                    <tr>
+                        <th>No</th>
+                        <th>Tim</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>G</th>
+                        <th>C</th>
+                        <th>G/C</th>
+                        <th>Point</th>
+                    </tr>
+                    {% for tim in klasemen %}
+                    <tr>
+                        <td>{{ tim['No'] }}</td>
+                        <td>{{ tim['Tim'] }}</td>
+                        <td>{{ tim['Win'] }}</td>
+                        <td>{{ tim['Draw'] }}</td>
+                        <td>{{ tim['Lose'] }}</td>
+                        <td>{{ tim['Goal'] }}</td>
+                        <td>{{ tim['Conceded'] }}</td>
+                        <td>{{ tim['GC'] }}</td>
+                        <td>{{ tim['Point'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("assets/backgroundHomeUtama.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    margin: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+/* STYLE INPUT */
+.Liga {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 300px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.Liga h1 {
+    /* style judulnya */
+    color: white;
+    font-family: "Ubuntu";
+}
+.isiLiga {
+    margin: 10px;
+    padding: 5px;
+}
+.isiLiga select {
+    padding: 10px; /*style select */
+    border-radius: 5px;
+    background: white;
+    font-size: 15px;
+    font-family: "Ubuntu";
+    cursor: pointer;
+    margin: 10px;
+}
+.isiLiga input {
+    /*style input*/
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+    font-size: 15px;
+    font-family: "Ubuntu";
+    cursor: pointer;
+    margin: 10px;
+    width: 100%;
+}
+.timPertama {
+    display: flex; /*ben sebelahan*/
+    gap: 10px;
+}
+.timKedua {
+    display: flex;
+    gap: 10px;
+}
+.isiLiga button {
+    /*style button*/
+    background: white;
+    color: black;
+    font-family: "Ubuntu";
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+}
+.deskripsi {
+    /*deskripsi ra penting jir*/
+    font-family: "Ubuntu";
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* STYLE KLASEMEN */
+.klasemen {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    margin: 20px;
+    overflow-x: auto;
+}
+.klasemen h2 {
+    color: white;
+    font-family: "Ubuntu";
+    text-align: center;
+}
+.klasemen table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 10px;
+    text-align: left;
+    background: white;
+    color: black;
+    font-family: "Ubuntu";
+    border-radius: 5px;
+    border: none;
+}
+
+.klasemen table th,
+td {
+    padding: 5px;
+}

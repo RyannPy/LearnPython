@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Analisis Angka</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Analisis Data Statistik</h1>
+
+    <form method="POST">
+      <label for="input-angka">Masukkan angka (pisahkan dengan spasi):</label>
+      <input type="text" name="angka" id="input-angka" placeholder="contoh: 12 45 23 67 23">
+      <button type="submit">Analisis</button>
+    </form>
+
+    {% if hasil %}
+      <div class="hasil">
+        {% if hasil.error %}
+          <p style="color: red;">{{ hasil.error }}</p>
+        {% else %}
+          <div class="card"><h3>Rata-rata</h3><p>{{ hasil.mean }}</p></div>
+          <div class="card"><h3>Median</h3><p>{{ hasil.median }}</p></div>
+          <div class="card"><h3>Modus</h3><p>{{ hasil.modus }}</p></div>
+          <div class="card"><h3>Nilai Terbesar</h3><p>{{ hasil.max }}</p></div>
+          <div class="card"><h3>Nilai Terkecil</h3><p>{{ hasil.min }}</p></div>
+          <div class="card"><h3>Range</h3><p>{{ hasil.range }}</p></div>
+          <div class="card"><h3>Standar Deviasi</h3><p>{{ hasil.stdev }}</p></div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
